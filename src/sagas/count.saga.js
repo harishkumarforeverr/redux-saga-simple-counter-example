@@ -6,7 +6,9 @@ const apiCallForAdd = async () => {
 };
 function* incrementCountCallbackfn() {
   try {
+    //  we make api call in call() which we get from saga effects
     const products = yield call(apiCallForAdd); 
+    //  here will put will dispatch the payload to store (reducer)
     yield put({
       type: "ADD",
       payload: products,
